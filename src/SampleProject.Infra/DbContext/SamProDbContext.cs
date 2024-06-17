@@ -3,7 +3,7 @@ using SampleProject.Domain;
 
 namespace SampleProject.Infra;
 
-public class SamProDbContext : DbContext
+public sealed class SamProDbContext : DbContext
 {
     public SamProDbContext(DbContextOptions<SamProDbContext> options)
         : base(options)
