@@ -18,6 +18,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\SampleProject.Infra\SampleProject.Infra.csproj" />
+    <ProjectReference Include="..\SampleProject.Application\SampleProject.Application.csproj" />
 	</ItemGroup>
 
 </Project>
