@@ -10,6 +10,8 @@ public class WorkbookEntityConfig : IEntityTypeConfiguration<WorkbookEntity>
     {
         builder.ToTable("Workbook");
         builder.HasKey(x => x.Id);
+        builder.Property(x => x.Id).UseIdentityColumn();
+        
         builder.Property(x => x.Title).IsRequired().HasMaxLength(100);
         builder.Property(x => x.UserId).IsRequired();
 
