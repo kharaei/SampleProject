@@ -12,7 +12,7 @@ public class WorkbookRepository(SamProDbContext _dbContext) : IWorkbookRepositor
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<WorkbookEntity>> ReadAll()
+    public async Task<IEnumerable<WorkbookEntity>> ReadAllAsync()
     {
         return await _dbContext.Workbook.ToListAsync();
     }

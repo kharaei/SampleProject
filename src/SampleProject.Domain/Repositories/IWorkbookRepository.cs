@@ -5,5 +5,5 @@ namespace SampleProject.Domain.Repositoties;
 public interface IWorkbookRepository
 {
     Task CreateAsync(WorkbookEntity entity);
-    Task<IEnumerable<WorkbookEntity>> ReadAll();
+    Task<IEnumerable<WorkbookEntity>> ReadAllAsync();
 }
