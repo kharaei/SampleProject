@@ -4,5 +4,5 @@ namespace SampleProject.Application.Contracts;
 
 public interface IUserService
 {
-    Task Registration(RegistrationDTO input);
+    Task Registration(RegistrationDTO input, CancellationToken cToken);
 }

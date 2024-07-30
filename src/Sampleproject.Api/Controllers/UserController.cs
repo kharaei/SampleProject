@@ -10,9 +10,9 @@ namespace SampleProject.Api.Controllers;
 public class UserController(IUserService userService) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Insert(RegistrationDTO request)
+    public async Task<IActionResult> Insert(RegistrationDTO request, CancellationToken cToken)
     {
-        await userService.Registration(request);
+        await userService.Registration(request, cToken);
         return Ok();
     }
 }

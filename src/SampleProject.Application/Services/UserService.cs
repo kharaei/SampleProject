@@ -7,13 +7,13 @@ namespace SampleProject.Application.Services;
 
 public class UserService(IUserRepository userRepository) : IUserService
 {
-    public async Task Registration(RegistrationDTO input)
+    public async Task Registration(RegistrationDTO input, CancellationToken cToken)
     {
         var newEntity = new UserEntity {
             Fullname = input.Fullname,
             Username = input.Username,
             Password = input.Password
         };
-        await userRepository.CreateAsync(newEntity);
+        await userRepository.CreateAsync(newEntity, cToken);
     }
 }

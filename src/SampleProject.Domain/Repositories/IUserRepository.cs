@@ -4,5 +4,5 @@ namespace SampleProject.Domain.Repositoties;
 
 public interface IUserRepository
 {
-    Task CreateAsync(UserEntity entity);
+    Task CreateAsync(UserEntity entity, CancellationToken cToken);
 }
