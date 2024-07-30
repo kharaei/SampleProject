@@ -1,7 +1,6 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace SampleProject.Domain;
+namespace SampleProject.Domain.Entities;
 
 public class UserEntity : BaseEntity
 {
@@ -9,4 +8,6 @@ public class UserEntity : BaseEntity
     public string? Username { get; set; }
     public string? Password { get; set; }
     public string? Fullname { get; set; }
+
+    public ICollection<WorkbookEntity>? Workbooks { get; set; }
 }

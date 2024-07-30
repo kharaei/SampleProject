@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SampleProject.Infra;
 
@@ -10,9 +11,11 @@ using SampleProject.Infra;
 namespace SampleProject.Infra.Migrations
 {
     [DbContext(typeof(SamProDbContext))]
-    partial class SamProDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240730170800_AddWorkbookEntity")]
+    partial class AddWorkbookEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
