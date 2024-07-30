@@ -1,4 +1,4 @@
-namespace SampleProject.Domain;
+namespace SampleProject.Domain.Entities;
 
 public class BaseEntity
 {
