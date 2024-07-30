@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SampleProject.Domain.Entities;
 using SampleProject.Domain.Repositoties;
 
@@ -9,5 +10,10 @@ public class WorkbookRepository(SamProDbContext _dbContext) : IWorkbookRepositor
     {
         await _dbContext.Workbook.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<WorkbookEntity>> ReadAll()
+    {
+        return await _dbContext.Workbook.ToListAsync();
     }
 }
