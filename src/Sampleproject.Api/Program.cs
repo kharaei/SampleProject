@@ -1,16 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-using SampleProject.Application.Services;
-using SampleProject.Application.Contracts;
 using SampleProject.Domain.Repositoties;
 using SampleProject.Infra;
 using SampleProject.Infra.Repositories;
+using SampleProject.Application.Usecases.User.Command.Registration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddMediatR(options => options.RegisterServicesFromAssembly(typeof(RegistrationCommand).Assembly));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddDbContext<SamProDbContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
