@@ -2,7 +2,7 @@ using MediatR;
 
 namespace SampleProject.Application.Usecases.User.Command.Registration;
 
-public class RegistrationCommand : IRequest<int>
+public class RegistrationCommand : IRequest
 {
     public string? Username { get; set; }
     public string? Password { get; set; }

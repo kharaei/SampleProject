@@ -5,4 +5,5 @@ namespace SampleProject.Domain.Repositoties;
 public interface IUserRepository
 {
     Task CreateAsync(UserEntity entity, CancellationToken cToken);
+    Task<IEnumerable<UserEntity>> ReadAllAsync();
 }

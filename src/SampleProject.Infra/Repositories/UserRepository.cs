@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using SampleProject.Domain.Entities;
 using SampleProject.Domain.Repositoties;
 
@@ -9,5 +10,10 @@ public class UserRepository(SamProDbContext _dbContext) : IUserRepository
     {
         await _dbContext.Users.AddAsync(entity);
         await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<UserEntity>> ReadAllAsync()
+    {
+        return await _dbContext.Users.ToListAsync();
     }
 }

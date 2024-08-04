@@ -4,9 +4,9 @@ using SampleProject.Domain.Repositoties;
 
 namespace SampleProject.Application.Usecases.User.Command.Registration;
 
-public class RegistrationCommandHandler(IUserRepository userRepository) : IRequestHandler<RegistrationCommand, int>
+public class RegistrationCommandHandler(IUserRepository userRepository) : IRequestHandler<RegistrationCommand>
 {
-    public async Task<int> Handle(RegistrationCommand request, CancellationToken cToken)
+    public async Task Handle(RegistrationCommand request, CancellationToken cToken)
     {
         var newEntity = new UserEntity {
             Fullname = request.Fullname,
@@ -15,6 +15,5 @@ public class RegistrationCommandHandler(IUserRepository userRepository) : IReque
         };
 
         await userRepository.CreateAsync(newEntity, cToken);
-        return newEntity.Id;
     }
 }
